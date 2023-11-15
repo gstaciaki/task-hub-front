@@ -1,8 +1,8 @@
 import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import Login from './pages/Login';
-import TaskList from './pages/TaskList';
+import Login from './pages/Login/Login';
+import TaskList from './pages/TaskList/TaskList';
 
 const App = () => {
   return (

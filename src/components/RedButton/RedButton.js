@@ -10,7 +10,7 @@ const RedButton = ({ text, to }) => {
     }
 
     return (
-        <button onClick={handleClick}>{text}</button>
+        <button className='redButton' onClick={handleClick}>{text}</button>
     )
 }
 
