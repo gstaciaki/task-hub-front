@@ -2,14 +2,14 @@ import './TableTitle.css'
 
 const TableTitle = () => {
 
-    const fields = ['Prop 1', 'Prop 2', 'Prop 3']
-
     return (
         <thead className="title">
             <tr>
-                {fields.map((field, index) => {
-                    return <th key={index}>{field}</th>
-                })}
+                <th>Titulo</th>
+                <th>Data de Criacao</th>
+                <th>Data de Finalizacao</th>
+                <th>Responsavel</th>
+                <th>Prioridade</th>
             </tr>
         </thead>
     )
