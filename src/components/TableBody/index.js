@@ -1,18 +1,27 @@
 import React from 'react';
 import './TableBody.css';
-import UserIcon from '../UserIcon';
-
+import UsersIcons from '../UsersIcons';
+//<UserIcon text={row.owner} />
 const TableBody = (props) => {
 
     return (
         <tbody className="body">
-            {props.rows.map((row, index) => (
-                <tr key={index}>
-                    {Object.keys(row).map(prop => {
-                        return <td> {prop == 'owner' && row[prop] ? <UserIcon text={row[prop]} /> : row[prop]} </td>
-                    })}
-                </tr>
-            ))}
+            {props.rows.map((row) => {
+                if (row.field) return (
+                    <tr key={row.id}>
+                        <td>{row.field}</td>
+                    </tr>
+                )
+                return (
+                    <tr key={row.id}>
+                        <td>{row.title}</td>
+                        <td>{row.createdAt}</td>
+                        <td>{row.finishedAt}</td>
+                        <td>{<UsersIcons owners={row.owners} />}</td>
+                        <td>{row.priority}</td>
+                    </tr>
+                )
+            })}
         </tbody>
     );
 }

@@ -7,10 +7,10 @@ import NewTaskField from '../NewTaskField';
 
 const TableTask = () => {
     const [tasks, setTasks] = useState([
-        { title: 'Arrumar as parada', createdAt: '14/10/2023', finishedAt: '14/12/2023', owner: 'Guilherme Staciaki', priority: 'Alta' },
-        { title: 'Fazer compras', createdAt: '15/10/2023', finishedAt: '20/10/2023', owner: 'Maria Silva', priority: 'Média' },
-        { title: 'Estudar React', createdAt: '16/10/2023', finishedAt: '30/11/2023', owner: 'João Souza', priority: 'Alta' },
-        { title: 'Limpar casa', createdAt: '18/10/2023', finishedAt: '19/10/2023', owner: 'Ana Oliveira', priority: 'Baixa' }
+        { id: 1, title: 'Arrumar as parada', createdAt: '14/10/2023', finishedAt: '14/12/2023', owners: ['Guilherme Staciaki', 'Pedro Lopes', 'Osvaldo', 'Livia'], priority: 'Alta' },
+        { id: 2, title: 'Fazer compras', createdAt: '15/10/2023', finishedAt: '20/10/2023', owners: ['Maria Silva'], priority: 'Média' },
+        { id: 3, title: 'Estudar React', createdAt: '16/10/2023', finishedAt: '30/11/2023', owners: ['João Souza'], priority: 'Alta' },
+        { id: 4, title: 'Limpar casa', createdAt: '18/10/2023', finishedAt: '19/10/2023', owners: ['Ana Oliveira'], priority: 'Baixa' }
     ]);
     const [isNewTaskFieldPresent, setIsNewTaskFieldPresent] = useState(false);
 
@@ -22,7 +22,7 @@ const TableTask = () => {
 
     const addNewTask = () => {
         if (!isNewTaskFieldPresent) {
-            const newTask = [<NewTaskField onKeyDown={handleEnter} />];
+            const newTask = {field: <NewTaskField onKeyDown={handleEnter} />};
             setTasks([...tasks, newTask]);
             setIsNewTaskFieldPresent(true)
         }
