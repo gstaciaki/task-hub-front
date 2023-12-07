@@ -1,5 +1,10 @@
 .tableHead {
     width: 100%;
+}
+
+.tableHead table {
+    width: 100%;
     border-spacing: 0;
     display: grid;
+    border: 0;
 }
