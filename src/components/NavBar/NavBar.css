@@ -1,0 +1,11 @@
+.navBar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5%;
+    height: 100Vh;
+    background-color: #332E30;
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+}

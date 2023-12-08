@@ -1,0 +1,21 @@
+.hamb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    margin-top: 10px;
+}
+
+.hamb button:hover {
+    cursor: pointer;
+}
+
+.hamb button{
+    background-image: url('/public/img/hamburger.png');
+    background-color: inherit;
+    background-size: cover;
+    width: 36px;
+    height: 36px;
+    border: none;
+    margin: 0;
+}

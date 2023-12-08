@@ -1,0 +1,21 @@
+.users {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    margin-top: 10px;
+}
+
+.users button:hover {
+    cursor: pointer;
+}
+
+.users button{
+    background-image: url('/public/img/user.png');
+    background-color: inherit;
+    background-size: cover;
+    width: 36px;
+    height: 36px;
+    border: none;
+    margin: 0;
+}
