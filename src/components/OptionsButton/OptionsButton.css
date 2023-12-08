@@ -1,10 +1,10 @@
-.options{
+.options {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.options button{
+.options button {
     background-image: url('/public/img/options.png');
     background-color: inherit;
     background-size: cover;
@@ -14,4 +14,13 @@
     margin-left: 10px;
     margin-right: 3em;
     transform: rotate(90deg);
+}
+
+.options div {
+    display: flex;
+    align-items: center;
+}
+
+.options div>* {
+    margin-left: 10px;
 }
