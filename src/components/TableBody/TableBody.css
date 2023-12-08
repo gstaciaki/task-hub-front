@@ -18,6 +18,11 @@
     justify-content: center;
 }
 
+.body td:hover {
+    color: #BC103A;
+    cursor: pointer;
+}
+
 .body tr td:last-child {
     border-right: none;
 }
