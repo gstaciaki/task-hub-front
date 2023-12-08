@@ -11,4 +11,4 @@ const TaskInformations = () => {
     )
 }
 
-export default TaskInformations
+export default TaskInformations 

@@ -1,6 +1,10 @@
 import './DetailsBlock.css'
+import { useSelectedTaskContext } from '../../context/SelectedTaskContext'
+import UsersIcons from '../UsersIcons'
 
 const DetailsBlock = () => {
+    const { selectedTask } = useSelectedTaskContext()
+
     return (
         <div className='detailsBlock'>
             <table>
@@ -13,10 +17,10 @@ const DetailsBlock = () => {
                         <td>Responsavel</td>
                     </th>
                     <tr>
-                        <td>Valor</td>
-                        <td>Valor</td>
-                        <td>Valor</td>
-                        <td>Valor</td>
+                        <td>{selectedTask.createdAt}</td>
+                        <td>{selectedTask.finishedAt}</td>
+                        <td>{selectedTask.priority}</td>
+                        <td>{<UsersIcons owners={selectedTask.owners} />}</td>
                     </tr>
                 </tbody>
             </table>
@@ -24,4 +28,4 @@ const DetailsBlock = () => {
     )
 }
 
-export default DetailsBlock
+export default DetailsBlock 

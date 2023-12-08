@@ -2,13 +2,13 @@ import CloseButton from '../CloseButton'
 import OptionsButton from '../OptionsButton'
 import './TaskButtons.css'
 
-const TaskButtons = () => {
+const TaskButtons = ({ onCloseButtonClick }) => {
     return (
         <div className='buttons'>
-            <CloseButton />
+            <CloseButton onClick={onCloseButtonClick} />
             <OptionsButton />
         </div>
-        
+
     )
 }
 

@@ -1,10 +1,10 @@
 import './CloseButton.css'
 
-const CloseButton = () => {
+const CloseButton = ( {onClick} ) => {
 
     return (
         <div className='closeBt'>
-            <button></button>
+            <button onClick={onClick}></button>
         </div>
     )
 }

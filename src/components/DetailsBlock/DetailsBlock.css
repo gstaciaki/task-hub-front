@@ -38,4 +38,8 @@
     padding: 5px 0px;
     border-bottom: 1px solid #d9d9d9;
     color: #d9d9d9;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
