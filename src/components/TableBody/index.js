@@ -22,8 +22,8 @@ const TableBody = ({ rows, onClick, isNewTaskFieldPresent, newTaskField }) => {
         return (
           <tr key={row.id} onClick={() => onClick(row)}>
             <td>{row.title}</td>
-            <td>{row.createdAt}</td>
-            <td>{row.finishedAt}</td>
+            <td>{row.created_at}</td>
+            <td>{row.finished_at}</td>
             <td>{<UsersIcons owners={row.owners} />}</td>
             <td>{row.priority}</td>
           </tr>
