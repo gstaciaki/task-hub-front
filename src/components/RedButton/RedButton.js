@@ -1,16 +1,9 @@
-import { useNavigate } from 'react-router-dom'
 import './RedButton.css'
 
-const RedButton = ({ text, to }) => {
-    const navigate = useNavigate();
-
-    const handleClick = () => {
-
-        navigate(to)
-    }
+const RedButton = ({ onClick, text }) => {
 
     return (
-        <button className='redButton' onClick={handleClick}>{text}</button>
+        <button className='redButton' onClick={onClick}>{text}</button>
     )
 }
 

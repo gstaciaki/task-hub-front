@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const fetchTasks = async () => {
+const createTask = async (data) => {
   try {
-    const response = await axios.get('http://localhost/api/tasks', {
+    const response = await axios.post('http://localhost/api/tasks', data, {
       withCredentials: true,
       headers: {
         'Authorization': localStorage.getItem('session')
@@ -11,9 +11,9 @@ const fetchTasks = async () => {
 
     return response.data.tasks;
   } catch (error) {
-    console.error('Error fetching tasks:', error);
+    console.error('Error creating task:', error);
     throw error;
   }
 };
 
-export default fetchTasks;
+export default createTask;

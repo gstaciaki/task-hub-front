@@ -8,6 +8,7 @@ import './TableTask.css';
 import NewTaskField from '../NewTaskField';
 import TaskModal from '../TaskModal';
 import fetchTasks from '../../services/taskService';
+import createTask from '../../services/createTaskService';
 
 const TableTask = () => {
   const { tasks, setTasks } = useTaskContext();
@@ -25,8 +26,8 @@ const TableTask = () => {
 
   const handleEnter = (event) => {
     if (event.key !== 'Enter') return;
-    setTasks([...tasks, { title: event.target.value, createdAt: '', finishedAt: '', owner: '', priority: '' }]);
-    setIsNewTaskFieldPresent(false);
+    createTask({ title: event.target.value})
+    window.location.reload();
   };
 
   const addNewTask = () => {

@@ -1,9 +1,18 @@
-import './TextField.css'
+import React from 'react';
+import './TextField.css';
 
 const TextField = (props) => {
-    return (
-        <input className="textInput" placeholder={props.placeholder} type={props.type}/>
-    )
-}
+  const { placeholder, type, value, onChange } = props;
 
-export default TextField
+  return (
+    <input
+      className="textInput"
+      placeholder={placeholder}
+      type={type}
+      value={value}
+      onChange={onChange}
+    />
+  );
+};
+
+export default TextField;

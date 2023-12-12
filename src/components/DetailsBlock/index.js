@@ -17,8 +17,8 @@ const DetailsBlock = () => {
                         <td>Responsavel</td>
                     </th>
                     <tr>
-                        <td>{selectedTask.createdAt}</td>
-                        <td>{selectedTask.finishedAt}</td>
+                        <td>{selectedTask.created_at}</td>
+                        <td>{selectedTask.finished_at}</td>
                         <td>{selectedTask.priority}</td>
                         <td>{<UsersIcons owners={selectedTask.owners} />}</td>
                     </tr>
