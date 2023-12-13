@@ -1,22 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ConfirmDeleteModal.css';
+import deleteTask from '../../services/deleteTaskService'
+import { useSelectedTaskContext } from '../../context/SelectedTaskContext'
 
 const ConfirmDeleteModal = () => {
   const [isVisible, setIsVisible] = useState(true);
+  const { selectedTask } = useSelectedTaskContext()
 
-  const handleDelete = () => {
-    // Lógica para excluir a tarefa
-    // ...
-
-    // Fechar o modal após excluir
-    setIsVisible(false);
-    window.location.reload();
+  const handleDelete = async () => {
+    try {
+      await deleteTask(selectedTask.id);
+      setIsVisible(false);
+    } catch (error) {
+      console.error('Erro ao excluir a tarefa:', error);
+    }
   };
 
   const handleCancel = () => {
     setIsVisible(false);
-
   };
+
+  useEffect(() => {
+    if (!isVisible) {
+      window.location.reload();
+    }
+  }, [isVisible]);
 
   return (
     isVisible && (
