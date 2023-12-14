@@ -12,7 +12,6 @@ const CommentsList = () => {
         const fetchData = async () => {
             try {
                 const fetchedComments = await fetchComments(selectedTask.id);
-                console.log(fetchedComments)
                 setComments(fetchedComments);
             } catch (error) {
                 console.error('Error fetching comments:', error);

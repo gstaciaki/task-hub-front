@@ -1,0 +1,75 @@
+.editModal {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: auto;
+}
+
+.editModal #back {
+    width: 450px;
+    height: 750px;
+    background-color: #332E30;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.editModal #content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.editModal button {
+    width: fit-content;
+    background-image: none;
+    color: #d9d9d9;
+    border: 1px solid #d9d9d9;
+    border-radius: 25px;
+    margin-right: 25px;
+    margin-left: 25px;
+}
+
+.buttons div{
+    display: flex;
+    justify-content: space-around;
+}
+
+.editModal label {
+    text-align: left;
+    width: 100%;
+}
+
+.editModal input {
+    background-color: #1e1e1e;
+    border: none;
+    height: 2em;
+    width: 100%;
+    color: #d9d9d9;
+    font-size: 16px;
+    padding-left: 15px;
+    border-radius: 10px;
+}
+
+.editModal select {
+    background-color: #1e1e1e;
+    border: none;
+    min-height: 2em;
+    max-height: 5em;
+    width: 100%;
+    color: #d9d9d9;
+    font-size: 16px;
+    padding-left: 15px;
+    border-radius: 10px;
+}
