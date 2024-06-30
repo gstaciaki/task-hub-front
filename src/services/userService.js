@@ -1,9 +1,12 @@
 import axios from 'axios';
 
-const fetchUsers = async () => {
+const fetchUsers = async ({page, per_page}) => {
   try {
-    const response = await axios.get('http://localhost/api/users', {
-      withCredentials: true,
+    const response = await axios.get('http://localhost/users', {
+      params: {
+        page,
+        per_page
+      },
       headers: {
         'Authorization': localStorage.getItem('session')
       }

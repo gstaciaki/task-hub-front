@@ -2,8 +2,7 @@ import axios from 'axios';
 
 const deleteTask = async (taskId) => {
   try {
-    const response = await axios.delete(`http://localhost/api/tasks/${taskId}`, {
-      withCredentials: true,
+    const response = await axios.delete(`http://localhost/tasks/${taskId}`, {
       headers: {
         'Authorization': localStorage.getItem('session')
       }

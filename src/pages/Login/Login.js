@@ -17,17 +17,19 @@ const Login = () => {
     }
 
     const handleLogin = () => {
-        axios.post('http://localhost/api/login', {
-            email: email,
-            password: password
+        axios.post(`http://localhost/login`, {
+            user: {
+                email: email,
+                password: password
+            }
         })
-        .then(response => {
-            localStorage.setItem('session', response.data.session)
-            goToIndex();
-        })
-        .catch(error => {
-            alert('Falha no login:', error);
-        });
+            .then(response => {
+                localStorage.setItem('session', response.data.userId)
+                goToIndex();
+            })
+            .catch(error => {
+                alert('Falha no login:', error);
+            });
     }
 
     return (
@@ -45,7 +47,7 @@ const Login = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                <RedButton onClick={handleLogin} text="LOGIN"/>
+                <RedButton onClick={handleLogin} text="LOGIN" />
             </GraySquare>
         </div>
     );

@@ -19,7 +19,7 @@ const ConfirmDeleteModal = () => {
         setOwners(selectedTask.owners || []);
         setFinished(!!selectedTask.finished_at);
 
-        fetchUsers().then((users) => {
+        fetchUsers({page: 1, per_page: 10}).then((users) => {
             setUsers(users);
         });
     }, [selectedTask]);
@@ -41,8 +41,8 @@ const ConfirmDeleteModal = () => {
         const data = {
             title,
             priority,
-            owners: owners.map(owner => owner.user_id),
-            finished_at: finished ? (new Date()).toISOString().split('T')[0] : '',
+            owners: owners.map(owner => owner.id),
+            status: finished ? 'closed' : 'open'
         }
 
         updateTask(data, selectedTask.id).then(() => {
@@ -69,7 +69,7 @@ const ConfirmDeleteModal = () => {
                         <select multiple value={owners} onChange={handleOwnersChange}>
                             {users.map((user) => (
                                 <option key={user.id} value={user.id}>
-                                    {user.username}
+                                    {user.name}
                                 </option>
                             ))}
                         </select>

@@ -1,5 +1,143 @@
 .usersScreen {
-    background-color: #1e1e1e;
-    width: 100vw;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #1e1e1e;
+  width: 100vw;
+  height: 100vh;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.userTableHead {
+  background-color: #332E30;
+  width: 1100px;
+  height: 540px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+}
+
+thead.userTableTitle th {
+  background-color: #332E30;
+  padding: 10px;
+  text-align: left;
+  font-weight: bold;
+  border-radius: 25px;
+}
+
+tbody.userBody tr {
+  background-color: #332E30;
+  border-bottom: 1px solid #444;
+  cursor: pointer;
+}
+
+tbody.userBody tr:hover {
+  color: #BC103A
+}
+
+tbody.userBody td {
+  padding: 10px;
+}
+
+.newUser {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.newUser button {
+  padding: 10px 20px;
+  background-color: #444;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.newUser button:hover {
+  background-color: #555;
+}
+
+.userModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 8px;
+  color: #fff;
+  z-index: 1000;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.modalContent form div {
+  margin-bottom: 10px;
+}
+
+.modalContent form label {
+  margin-right: 10px;
+}
+
+.modalContent form input[type="text"],
+.modalContent form input[type="email"],
+.modalContent form input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  background-color: #3c3c3c;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.modalContent form input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.modalContent form button {
+  padding: 10px 20px;
+  background-color: #444;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modalContent form button:hover {
+  background-color: #555;
+}
+
+.modalContent form .deleteButton {
+  background-color: #D9534F;
+  margin-left: 10px;
+}
+
+.modalContent form .deleteButton:hover {
+  background-color: #C9302C;
+}
+
+.closeButton {
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  color: #f00;
 }

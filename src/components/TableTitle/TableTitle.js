@@ -3,7 +3,7 @@ import './TableTitle.css'
 const TableTitle = () => {
 
     return (
-        <thead className="title">
+        <thead className="tableTitle">
             <tr>
                 <th>Titulo</th>
                 <th>Data de Criacao</th>

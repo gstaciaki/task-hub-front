@@ -1,18 +1,18 @@
 import axios from 'axios';
 
-const createTask = async (data) => {
+const createUser = async (data) => {
   try {
-    const response = await axios.post('http://localhost/tasks', data, {
+    const response = await axios.post('http://localhost/users', data, {
       headers: {
         'Authorization': localStorage.getItem('session')
       }
     });
 
-    return response.data.tasks;
+    return response.data;
   } catch (error) {
     console.error('Error creating task:', error);
     throw error;
   }
 };
 
-export default createTask;
+export default createUser;

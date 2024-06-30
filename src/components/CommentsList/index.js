@@ -27,7 +27,6 @@ const CommentsList = () => {
                 <Comment
                     key={comment.id}
                     description={comment.description}
-                    base64Img={comment.image}
                 />
             ))}
         </div>

@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const fetchTasks = async () => {
+const fetchProfile = async () => {
   try {
-    const response = await axios.get('http://localhost/tasks', {
+    const response = await axios.get('http://localhost/profile', {
       headers: {
         'Authorization': localStorage.getItem('session')
       }
@@ -15,4 +15,4 @@ const fetchTasks = async () => {
   }
 };
 
-export default fetchTasks;
+export default fetchProfile;

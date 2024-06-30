@@ -3,11 +3,11 @@ import './UserIcon.css'
 const UserIcon = (props) => {
 
     const handleClick = () => {
-        alert('User: ' + props.text.full_name)
+        alert('User: ' + props.text.name)
     }
 
     const getInitials = (name) => {
-        return name.full_name.slice(0, 1)
+        return name.name.slice(0, 1)
     }
 
     return (

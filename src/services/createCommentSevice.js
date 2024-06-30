@@ -2,8 +2,7 @@ import axios from 'axios';
 
 const createComment = async (taskId, data) => {
     try {
-        const response = await axios.post(`http://localhost/api/tasks/${taskId}/comments`, data, {
-            withCredentials: true,
+        const response = await axios.post(`http://localhost/tasks/${taskId}/comments`, data, {
             headers: {
                 'Authorization': localStorage.getItem('session')
             }

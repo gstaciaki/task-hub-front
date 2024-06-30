@@ -1,0 +1,157 @@
+.profileScreen {
+    background-color: #1e1e1e;
+    width: 100vw;
+    height: 100vh;
+}
+
+.center {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    color: #d9d9d9;
+    height: 9%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 1em;
+    border-bottom: 2px solid #1e1e1e;   
+}
+
+.profileInfo {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.informations {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.avatarInfo {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textField {
+    color: #d9d9d9;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+}
+
+.textField input {
+    margin-top: 10px;
+    background-color: #1e1e1e;
+    color: #d9d9d9;
+    height: 40px;
+    width: 70%;
+    border-radius: 25px;
+    border: none;
+    padding-left: 20px;
+}
+
+.textField label {
+    margin-left: 20px;
+}
+
+.avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.avatar img {
+    border-radius: 25px 25px 0 0;
+    max-height: 250px;
+    max-width: 250px;
+    background-color: #1e1e1e;
+}
+
+.avatar button {
+    width: 100%;
+    max-width: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #d9d9d9;
+    font-size: 16px;
+    border-radius: 0 0 25px 25px;
+    border: none;
+}
+
+.avatar button img{
+    width: 40px;
+    background-color: #d9d9d9;
+}
+
+.changePassword {
+    width: 100%;
+    max-width: 250px;
+    background-color: #1e1e1e;
+    border: none;
+    color: #d9d9d9;
+    font-size: 16px;
+    font-weight: bold;
+    height: 40px;
+    border-radius: 25px;
+    margin-top: 30px;
+}
+
+.modal {
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #332E30;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.textField {
+    margin-bottom: 10px;
+}
+
+.modal button {
+    margin-top: 10px;
+}
