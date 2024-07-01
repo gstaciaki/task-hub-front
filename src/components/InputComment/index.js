@@ -1,18 +1,13 @@
 import React, { useState } from 'react';
 import './InputComment.css';
-import UploadButton from '../UploadButton';
 import SendButton from '../SendButton';
 
 const InputComment = () => {
     const [commentText, setCommentText] = useState('');
-    const [selectedFile, setSelectedFile] = useState(null);
 
     const handleCommentChange = (e) => {
+        console.log(`ta ino`)
         setCommentText(e.target.value);
-    };
-
-    const handleFileChange = (file) => {
-        setSelectedFile(file);
     };
 
     return (
@@ -23,8 +18,7 @@ const InputComment = () => {
                 value={commentText}
                 onChange={handleCommentChange}
             />
-            <UploadButton onFileChange={handleFileChange} />
-            <SendButton commentText={commentText} selectedFile={selectedFile} />
+            <SendButton commentText={commentText} />
         </div>
     );
 };

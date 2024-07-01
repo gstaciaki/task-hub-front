@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './EditModal.css';
 import { useSelectedTaskContext } from '../../context/SelectedTaskContext';
-import fetchUsers from '../../services/userService';
+import fetchProfile from '../../services/profilesService';
 import updateTask from '../../services/updateTaskService';
 
 const ConfirmDeleteModal = () => {
@@ -16,10 +16,10 @@ const ConfirmDeleteModal = () => {
     useEffect(() => {
         setTitle(selectedTask.title || '');
         setPriority(selectedTask.priority || '');
-        setOwners(selectedTask.owners || []);
+        setOwners(selectedTask.owners.map(owner => String(owner.id)) || []);
         setFinished(!!selectedTask.finished_at);
 
-        fetchUsers({page: 1, per_page: 10}).then((users) => {
+        fetchProfile().then((users) => {
             setUsers(users);
         });
     }, [selectedTask]);
@@ -33,22 +33,22 @@ const ConfirmDeleteModal = () => {
     };
 
     const handleOwnersChange = (event) => {
-        const selectedOptions = Array.from(event.target.selectedOptions, (option) => option.value);
-        setOwners(selectedOptions);
+        const { value } = event.target;
+        setOwners((prevOwners) =>
+            prevOwners.includes(value) ? prevOwners.filter(owner => owner !== value) : [...prevOwners, value]
+        );
     };
 
-    const handleConfirm = () => {
+    const handleConfirm = async () => {
         const data = {
             title,
-            priority,
-            owners: owners.map(owner => owner.id),
+            priority: priority ?? 'low',
+            owners: owners.map(owner => Number(owner)), // Ensure owners are saved as numbers
             status: finished ? 'closed' : 'open'
-        }
+        };
 
-        updateTask(data, selectedTask.id).then(() => {
-            setIsVisible(false)
-        })
-        window.location.reload()
+        await updateTask(data, selectedTask.id);
+        window.location.reload();
     };
 
     return (
@@ -61,14 +61,14 @@ const ConfirmDeleteModal = () => {
                         <label>Prioridade</label>
                         <select value={priority} onChange={handlePriorityChange}>
                             <option value="low">Baixa</option>
-                            <option value="medium">Média</option>
+                            <option value="normal">Média</option>
                             <option value="high">Alta</option>
                             <option value="urgent">Urgente</option>
                         </select>
                         <label>Responsáveis</label>
                         <select multiple value={owners} onChange={handleOwnersChange}>
                             {users.map((user) => (
-                                <option key={user.id} value={user.id}>
+                                <option key={user.id} value={String(user.id)}>
                                     {user.name}
                                 </option>
                             ))}

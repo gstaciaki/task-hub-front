@@ -6,7 +6,7 @@ const Comments = () => {
 
     return (
         <div className='comments'>
-            <div className='commentsList'>
+            <div className='commentsSections'>
                 <CommentsList />
                 <InputComment />
             </div>

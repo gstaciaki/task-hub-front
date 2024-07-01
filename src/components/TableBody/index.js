@@ -3,6 +3,14 @@ import './TableBody.css';
 import UsersIcons from '../UsersIcons';
 
 const TableBody = ({ rows, onClick, isNewTaskFieldPresent, newTaskField }) => {
+
+  const priorityMap = {
+    'urgent': 'Urgente',
+    'high': 'Alta',
+    'normal': 'Média',
+    'low': 'Baixa'
+  }
+
   return (
     <tbody className="body">
       {rows.map((row) => {
@@ -25,7 +33,7 @@ const TableBody = ({ rows, onClick, isNewTaskFieldPresent, newTaskField }) => {
             <td>{row.created_at}</td>
             <td>{row.finished_at}</td>
             <td>{<UsersIcons owners={row.owners} />}</td>
-            <td>{row.priority}</td>
+            <td>{priorityMap[row.priority]}</td>
           </tr>
         );
       })}

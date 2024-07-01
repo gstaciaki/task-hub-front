@@ -1,12 +1,12 @@
 .commentsList {
-    width: 100%;
+    width: 95%;
     height: 80%;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
 .commentsList::-webkit-scrollbar {
-    width: 12px; /* largura da barra de rolagem */
+    width: 6px; /* largura da barra de rolagem */
 }
 
 .commentsList::-webkit-scrollbar-thumb {
@@ -19,7 +19,7 @@
 }
 
 .commentsList::-moz-scrollbar {
-    width: 12px; /* largura da barra de rolagem */
+    width: 6px; /* largura da barra de rolagem */
 }
 
 .commentsList::-moz-scrollbar-thumb {

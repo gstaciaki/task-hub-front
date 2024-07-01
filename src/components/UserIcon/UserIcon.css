@@ -12,3 +12,7 @@
     user-select: none;
     border: #1e1e1e solid 1.5px;
 }
+
+.icon.admin {
+    background-color: #1e1e1e
+}

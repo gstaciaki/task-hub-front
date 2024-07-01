@@ -16,7 +16,7 @@ const Users = () => {
     email: '',
     password: '',
     password_confirmation: '',
-    admin: false,
+    admin: 'normal',
   });
 
   useEffect(() => {
@@ -43,7 +43,7 @@ const Users = () => {
   const handleCreateUser = async (e) => {
     e.preventDefault();
     try {
-      await createUser(newUser);
+      await createUser({ ...newUser, admin: newUser.admin === 'admin' });
       setIsCreateUserModalOpen(false);
       window.location.reload();
     } catch (error) {
@@ -54,7 +54,7 @@ const Users = () => {
   const handleEditUser = async (e) => {
     e.preventDefault();
     try {
-      await updateUser(selectedUser.id, newUser);
+      await updateUser(selectedUser.id, { ...newUser, admin: newUser.admin === 'admin' });
       setIsEditUserModalOpen(false);
       window.location.reload();
     } catch (error) {
@@ -80,7 +80,7 @@ const Users = () => {
       email: user.email,
       password: '',
       password_confirmation: '',
-      admin: user.admin,
+      admin: user.admin ? 'admin' : 'normal',
     });
   };
 
@@ -165,14 +165,26 @@ const Users = () => {
                   />
                 </div>
                 <div>
+                  <label>Tipo de Usuário:</label>
                   <label>
                     <input
-                      type='checkbox'
+                      type='radio'
                       name='admin'
-                      checked={newUser.admin}
+                      value='admin'
+                      checked={newUser.admin === 'admin'}
                       onChange={handleInputChange}
                     />
                     Admin
+                  </label>
+                  <label>
+                    <input
+                      type='radio'
+                      name='admin'
+                      value='normal'
+                      checked={newUser.admin === 'normal'}
+                      onChange={handleInputChange}
+                    />
+                    Normal
                   </label>
                 </div>
                 <button type='submit'>Salvar</button>
@@ -229,14 +241,26 @@ const Users = () => {
                   />
                 </div>
                 <div>
+                  <label>Tipo de Usuário:</label>
                   <label>
                     <input
-                      type='checkbox'
+                      type='radio'
                       name='admin'
-                      checked={newUser.admin}
+                      value='admin'
+                      checked={newUser.admin === 'admin'}
                       onChange={handleInputChange}
                     />
                     Admin
+                  </label>
+                  <label>
+                    <input
+                      type='radio'
+                      name='admin'
+                      value='normal'
+                      checked={newUser.admin === 'normal'}
+                      onChange={handleInputChange}
+                    />
+                    Normal
                   </label>
                 </div>
                 <button type='submit'>Criar</button>
